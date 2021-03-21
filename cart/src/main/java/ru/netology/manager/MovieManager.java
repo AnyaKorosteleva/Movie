@@ -1,49 +1,45 @@
 package ru.netology.manager;
 
-import ru.netology.domain.PurchaseItem;
+import ru.netology.domain.PostMovie;
 
 public class MovieManager {
-  private PurchaseItem[] items = new PurchaseItem[0];
+    private PostMovie[] movies = new PostMovie[0];
 
-  public void add(PurchaseItem item) {
-    // создаём новый массив размером на единицу больше
-    int length = items.length + 1;
-    PurchaseItem[] tmp = new PurchaseItem[length];
-    // itar + tab
-    // копируем поэлементно
-    // for (int i = 0; i < items.length; i++) {
-    //   tmp[i] = items[i];
-    // }
-    System.arraycopy(items, 0, tmp, 0, items.length);
-    // кладём последним наш элемент
-    int lastIndex = tmp.length - 1;
-    tmp[lastIndex] = item;
-    items = tmp;
-  }
 
-  public PurchaseItem[] getAll() {
-    PurchaseItem[] result = new PurchaseItem[items.length];
-    // перебираем массив в прямом порядке
-    // но кладём в результаты в обратном
-    for (int i = 0; i < result.length; i++) {
-      int index = items.length - i - 1;
-      result[i] = items[index];
+    int defaultNumberToShow = 10;
+
+    public MovieManager(int number) {
+        if (number > 0) {
+            defaultNumberToShow = number;
+        }
     }
-    return result;
-  }
 
-  // наивная реализация
-  public void removeById(int id) {
-    int length = items.length - 1;
-    PurchaseItem[] tmp = new PurchaseItem[length];
-    int index = 0;
-    for (PurchaseItem item : items) {
-      if (item.getId() != id) {
-        tmp[index] = item;
-        index++;
-      }
+    public MovieManager() {
     }
-    // меняем наши элементы
-    items = tmp;
-  }
+
+    public void addMovie(PostMovie poster) {
+        int length = movies.length + 1;
+        PostMovie[] tmp = new PostMovie[length];
+        for (int i = 0; i < movies.length; i++) {
+            tmp[i] = movies[i];
+        }
+        int lastIndex = tmp.length - 1;
+        tmp[lastIndex] = poster;
+        movies = tmp;
+    }
+
+    public PostMovie[] getAllMovies() {
+        int lenght;
+        if (defaultNumberToShow <= movies.length) {
+            lenght = defaultNumberToShow;
+        } else {
+            lenght = movies.length;
+        }
+        PostMovie[] result = new PostMovie[lenght];
+        for (int i = 0; i < result.length; i++) {
+            int index = movies.length - i - 1;
+            result[i] = movies[index];
+        }
+        return result;
+    }
 }
