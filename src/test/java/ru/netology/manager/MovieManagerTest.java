@@ -61,7 +61,7 @@ class PostTest {
     @Test
     public void shouldShowMoviesWithLimit() {
 
-        MovieManager manager = new MovieManager(5);
+        MovieManager manager = new MovieManager(6);
         setup(manager);
         PostMovie[] actual = manager.getAllMovies();
         PostMovie[] expected = new PostMovie[]{movieToAdd9, movieToAdd8, movieToAdd7,
@@ -98,7 +98,7 @@ class PostTest {
 
     @Test
     public void shouldShowMoviesWithNegativeNumber() {
-        MovieManager manager = new MovieManager(-1);
+        MovieManager manager = new MovieManager(-2);
         setup(manager);
         PostMovie[] actual = manager.getAllMovies();
         PostMovie[] expected = new PostMovie[]{movieToAdd9, movieToAdd8, movieToAdd7,
