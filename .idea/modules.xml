@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/3.4_dependency.iml" filepath="$PROJECT_DIR$/.idea/3.4_dependency.iml" />
-      <module fileurl="file://$PROJECT_DIR$/cart/cart.iml" filepath="$PROJECT_DIR$/cart/cart.iml" />
     </modules>
   </component>
 </project>

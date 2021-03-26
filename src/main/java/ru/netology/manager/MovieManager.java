@@ -29,13 +29,13 @@ public class MovieManager {
     }
 
     public PostMovie[] getAllMovies() {
-        int lenght;
+        int length = 0;
         if (defaultNumberToShow <= movies.length) {
-            lenght = defaultNumberToShow;
+            length = defaultNumberToShow;
         } else {
-            lenght = movies.length;
+            length = movies.length;
         }
-        PostMovie[] result = new PostMovie[lenght];
+        PostMovie[] result = new PostMovie[length];
         for (int i = 0; i < result.length; i++) {
             int index = movies.length - i - 1;
             result[i] = movies[index];
