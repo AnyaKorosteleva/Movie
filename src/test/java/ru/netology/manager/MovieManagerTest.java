@@ -61,7 +61,7 @@ class PostTest {
     @Test
     public void shouldShowMoviesWithLimit() {
 
-        MovieManager manager = new MovieManager(6);
+        MovieManager manager = new MovieManager(5);
         setup(manager);
         PostMovie[] actual = manager.getAllMovies();
         PostMovie[] expected = new PostMovie[]{movieToAdd9, movieToAdd8, movieToAdd7,

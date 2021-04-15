@@ -9,7 +9,7 @@ public class MovieManager {
     int defaultNumberToShow = 10;
 
     public MovieManager(int number) {
-        if (number > 0) {
+        if (number >= 0) {
             defaultNumberToShow = number;
         }
     }
